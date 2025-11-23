@@ -14,16 +14,6 @@ describe('Registro de Cliente', () => {
       //cy.url().should('eq', 'https://ticketazo.com.ar/auth/login')
     })
 
-    it.only('ID 3 - Registro de cliente con email sin @', () => {
-      cy.completar_datos_cliente('Los Simpson Producciones', '30152478509', 'Av. Siempreviva 300', '3511002474')
-      cy.completar_datos_ubicacion('Córdoba', 'Achiras')
-      cy.completar_email_password('simpsonssa.com', 'simpsonssa.com', 'password', 'password')
-      cy.get('[data-slot="error-message"]')
-          .should('contain', 'Incluye un signo "@" en la dirección de correo electrónico. La dirección "simpsonssa.com" no incluye el signo "@"')
-          .and('have.length','2')
-      cy.url().should('eq', 'https://ticketazo.com.ar/auth/registerClient')
-    })
-
     it.only('ID 4 - Registro de cliente con email sin @', () => {
       cy.completar_datos_cliente('Los Simpson Producciones', '30152478509', 'Av. Siempreviva 300', '3511002474')
       cy.completar_datos_ubicacion('Córdoba', 'Achiras')
