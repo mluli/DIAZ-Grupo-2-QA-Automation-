@@ -1,0 +1,47 @@
+{
+    "cli_datos_validos":{
+        "nombre": "Test Cliente 01",
+        "cuit": "30152478509",
+        "direccion": "Av. Siempreviva 300",
+        "telefono": "3511002474",
+        "provincia": "Córdoba",
+        "localidad": "Achiras",
+        "email": "testcliente0101@gmail.com",
+        "password": "ContraCli351#"
+    },
+
+    "cli_email_inc1":{
+        "nombre": "Cliente Test 4",
+        "cuit": "30457896339",
+        "direccion": "San Martin 150",
+        "telefono": "3513006565",
+        "provincia": "Córdoba",
+        "localidad": "Jesús María",
+        "email": "testcliente4gmail.com",
+        "password": "ContraCli351#"
+    },
+
+    "cli_email_inc2":{
+        "nombre": "Cliente Test 5",
+        "cuit": "30258697429",
+        "direccion": "Dean Funes 321",
+        "telefono": "3513006565",
+        "provincia": "Córdoba",
+        "localidad": "La Calera",
+        "email": "testcliente5@",
+        "password": "ContraCli351#"
+    },
+
+    "cli_email_inc3":{
+        "nombre": "Cliente Test 78",
+        "cuit": "30258697429",
+        "direccion": "Dean Funes 321",
+        "telefono": "3513006565",
+        "provincia": "Córdoba",
+        "localidad": "La Calera",
+        "email": "testcliente78@gmail.com",
+        "password": "ContraCli351#"
+    }
+
+
+}

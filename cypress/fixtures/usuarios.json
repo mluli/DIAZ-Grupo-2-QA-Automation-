@@ -1,0 +1,22 @@
+{
+    "cliente_valido": {
+      "email": "testusuario735@hotmail.com",
+      "password": "Testpass2411#"
+    },
+    "comprador_valido": {
+      "email": "testusuario392@gmail.com",
+      "password": "Passtest2411#"
+    },
+    "usuario_cuenta_no_confirmada": {
+      "email": "testusuario951@outlook.com",
+      "password": "Passwordtest2511#"
+    },
+    "usuario_email_incorrecto": {
+      "email": "emailincorrecto@gmail.com",
+      "password": "Contraseña50#"
+    },
+    "usuario_password_incorrecto": {
+      "email": "valunobile@gmail.com.ar",
+      "password": "Contraseña50#"
+    }
+  }

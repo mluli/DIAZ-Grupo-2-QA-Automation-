@@ -46,7 +46,7 @@ cypress/downloads/
 *.swp
 
 # ==========================
-# Build o dist (si tu proyecto los genera)
+# Build o dist
 # ==========================
 dist/
 build/
