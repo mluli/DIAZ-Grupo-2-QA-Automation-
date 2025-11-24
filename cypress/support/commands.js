@@ -1,3 +1,5 @@
+//REGISTRO DE USUARIOS
+
 //Command para completar datos de usuario cliente
 Cypress.Commands.add('completar_datos_cliente', (razon_social, cuit, direccion, telefono) => {
     cy.get('[data-cy="input-razon-social"]').clear().type(razon_social)
@@ -22,17 +24,12 @@ Cypress.Commands.add('completar_email_password', (email, repemail, password, rep
     cy.get('[data-cy="input-repetir-password"]').clear().type(reppassword)
 })
 
-
+//LOGIN
 Cypress.Commands.add('login', (email, password) => {
     cy.visit('https://ticketazo.com.ar/auth/login')
     cy.get('[data-cy="input-email"]').clear().type(email)
     cy.get('[data-cy="input-password"]').clear().type(password)
     cy.get('[data-cy="btn-login"]').click()    
-  })
-
-  Cypress.Commands.add('editarPerfilOk', () => {
-    cy.get('[data-cy="btn-save-profile"]').click()
-    cy.contains('¡Perfil actualizado con éxito!').should('be.visible')
   })
 
   Cypress.Commands.add('validarMenu', (visibles = [], ocultos = []) => {
@@ -43,6 +40,12 @@ Cypress.Commands.add('login', (email, password) => {
     ocultos.forEach(item => {
       cy.contains(item).should('not.exist')
     })
+  })
+
+  //EDITAR PERFIL
+  Cypress.Commands.add('editarPerfilOk', () => {
+    cy.get('[data-cy="btn-save-profile"]').click()
+    cy.contains('¡Perfil actualizado con éxito!').should('be.visible')
   })
   
 
