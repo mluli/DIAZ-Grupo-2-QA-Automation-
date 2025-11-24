@@ -1,10 +1,12 @@
 describe('Editar Perfil de Cliente', () => {
-
     beforeEach(() => {
-        cy.session('usuario', () => {
-          cy.login('lospoturku@necub.com', 'QAClient123#')
+        cy.fixture('usuarios').then(({ cliente_valido }) => {
+          cy.session('cliente', () => {
+            cy.login(cliente_valido.email, cliente_valido.password)
+            cy.url().should('eq', 'https://ticketazo.com.ar/')
+          })
+          cy.visit('https://ticketazo.com.ar/editProfile')
         })
-        cy.visit('https://ticketazo.com.ar/editProfile')
       })
 
     it('ID 24 - Editar nombre del cliente', () => {
