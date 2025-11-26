@@ -66,6 +66,42 @@ Cypress.Commands.add('login', (email, password) => {
   })
   
 
+    //CREAR EVENTOS
+Cypress.Commands.add('crear_evento', (titulo, fechaano, horario, horariominuto, nombreLugar, calle, altura, codigo, info) => {
+    cy.visit('https://ticketazo.com.ar/newEvent')
+    cy.get('[data-cy="input-titulo"]').click().clear().type(titulo)
+    cy.get('[data-cy="datepicker-fecha"]').click().type(fechaano)
+    cy.get('[data-cy="select-edad"]').click()
+    cy.get('[data-cy="option-edad-ATP"]').click()
+    cy.get('[data-cy="select-genero"]').click()
+    cy.get('[data-cy="option-genero-StandUp"]').click()
+    cy.get('[data-has-start-content="true"] > .relative').click().type(horario).type(horariominuto)
+    cy.get('.grid > :nth-child(7) > .relative').click().type(horario).type(horariominuto)
+    cy.get('[data-cy="select-lugar-evento"]').click()
+    cy.get('[data-cy="option-lugar-7"]').click()
+    cy.get('[data-cy="input-nombre-lugar"]').click().type(nombreLugar)
+    cy.get('[data-cy="input-calle-lugar"]').click().type(calle)
+    cy.get('[data-cy="input-altura-lugar"]').click().type(altura)
+    cy.get('[data-cy="input-codigo-postal-lugar"]').click().type(codigo)
+    cy.get('input[placeholder="Seleccione una provincia"]').click()
+    cy.contains('span', 'Córdoba').click() 
+    cy.get('input[placeholder="Seleccione una localidad"]').click()
+    cy.contains('span', 'Agua de Oro').click()
+    cy.get('[data-cy="input-info"]').click().type(info)
+    cy.get('.rounded-b-large > .z-0').click()
+    cy.contains('span', 'Seleccionar entrada').click()
+    cy.contains('span', 'General').click()
+    cy.get('input[name="capacidadEntrada0"]').type('500');
+    cy.get('input[aria-label="Precio Entrada"]').type('15000');
+    cy.get('.rounded-b-large > :nth-child(2)').click()
+    cy.wait(5000)
+    cy.get('[data-hover="true"]').click()
+    cy.wait(2000)
+    cy.get('.rounded-b-large > .bg-primary').click()
+
+    cy.contains('Ocurrió un error al crear el evento. Inténtalo de nuevo.')
+  .should('be.visible')
+  })
   
 
  

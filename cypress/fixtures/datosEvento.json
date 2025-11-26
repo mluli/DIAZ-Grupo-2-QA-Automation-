@@ -1,0 +1,15 @@
+{
+    "evento_datos_validos":{
+        "titulo": "Gatito Stand Up",
+        "fechaano": "2030",
+        "horario": "4",
+        "horariominuto": "0",
+        "nombreLugar": "Studio",
+        "calle": "Rosario Santa Fe",
+        "altura": "667",
+        "codigo": "5000",
+        "info": "test" 
+              
+    }
+
+}
