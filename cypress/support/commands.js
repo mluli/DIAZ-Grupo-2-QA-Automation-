@@ -1,29 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
 Cypress.Commands.add('loginCorrecto', (email, password) => {
     cy.visit('https://ticketazo.com.ar/auth/login')
     cy.get('[data-cy="input-email"]').type('gutu3@hotmail.com')
@@ -39,6 +13,58 @@ Cypress.Commands.add('cambioDeNombre', () => {
     cy.get('[data-cy="btn-save-profile"]').click()
 
 })
+
+
+//REGISTRO DE USUARIO CLIENTE
+
+//Command para completar datos de usuario cliente
+Cypress.Commands.add('completar_datos_cliente', (razon_social, cuit, direccion, telefono) => {
+    cy.get('[data-cy="input-razon-social"]').clear().type(razon_social)
+    cy.get('[data-cy="input-cuit"]').clear().type(cuit)
+    cy.get('[data-cy="input-direccion"]').clear().type(direccion)
+    cy.get('[data-cy="input-telefono"]').clear().type(telefono)
+})
+
+//Command para completar desplegables de ubicación de cualquier perfil
+Cypress.Commands.add('completar_datos_ubicacion', (provincia, localidad) => {
+    cy.get('[data-cy="select-provincia"]').clear().type(provincia)
+    cy.get('ul > li > span').contains(provincia).click()
+    cy.get('[data-cy="select-localidad"]').clear().type(localidad)
+    cy.get('ul > li > span').contains(localidad).click()
+})
+
+//Command para completar email y password
+Cypress.Commands.add('completar_email_password', (email, repemail, password, reppassword) => {
+    cy.get('[data-cy="input-email"]').clear().type(email)
+    cy.get('[data-cy="input-confirmar-email"]').clear().type(repemail)
+    cy.get('[data-cy="input-password"]').clear().type(password)
+    cy.get('[data-cy="input-repetir-password"]').clear().type(reppassword)
+})
+
+//LOGIN
+Cypress.Commands.add('login', (email, password) => {
+    cy.visit('https://ticketazo.com.ar/auth/login')
+    cy.get('[data-cy="input-email"]').clear().type(email)
+    cy.get('[data-cy="input-password"]').clear().type(password)
+    cy.get('[data-cy="btn-login"]').click()    
+  })
+
+  Cypress.Commands.add('validarMenu', (visibles = [], ocultos = []) => {
+    visibles.forEach(item => {
+      cy.contains(item).should('be.visible')
+    })
+  
+    ocultos.forEach(item => {
+      cy.contains(item).should('not.exist')
+    })
+  })
+
+  //EDITAR PERFIL CLIENTE
+  Cypress.Commands.add('editarPerfilOk', () => {
+    cy.get('[data-cy="btn-save-profile"]').click()
+    cy.contains('¡Perfil actualizado con éxito!').should('be.visible')
+  })
+  
 
   
 
