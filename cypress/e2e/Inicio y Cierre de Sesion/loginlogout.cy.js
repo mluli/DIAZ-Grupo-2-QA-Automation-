@@ -5,7 +5,6 @@ describe('Login y Logout', () => {
     beforeEach(() => {
         cy.visit('https://ticketazo.com.ar/auth/login')
         cy.viewport('macbook-16')
-      
       })
 
     it('ID 16 - Login con credenciales existentes de comprador', () => {
