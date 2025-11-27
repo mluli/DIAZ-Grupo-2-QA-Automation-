@@ -18,5 +18,9 @@
     "usuario_password_incorrecto": {
       "email": "valunobile@gmail.com.ar",
       "password": "Contraseña50#"
+    },
+    "usuario_salas": {
+      "email": "experiencialolamora@gmail.com",
+      "password": "Acuarela2025$"
     }
   }
