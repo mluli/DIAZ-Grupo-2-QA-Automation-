@@ -2,7 +2,7 @@
   "test": "Challenge QA Automation Grupo 2",
   "autor": "Gustavo Lima",
   "devDependencies": {
-    "cypress": "14.5.1"
+    "cypress": "^14.5.1"
   },
   "scripts": {
     "test": "cypress run",
